@@ -164,6 +164,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Music.cs" />
     <Compile Include="Models\ProductDBContext.cs" />
+    <Compile Include="Models\ProductDBInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
