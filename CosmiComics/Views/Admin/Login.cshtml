@@ -1,0 +1,32 @@
+﻿@model CosmiComics.Models.AdminLogin
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container">
+    <h2>Admin Login</h2>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Username, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="submit" value="Admin" class="btn btn-default" />
+            </div>
+        </div>
+
+    }
+</div>
+

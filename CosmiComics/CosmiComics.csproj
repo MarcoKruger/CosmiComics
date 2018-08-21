@@ -153,6 +153,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Music.cs" />
@@ -221,6 +223,8 @@
     <Content Include="Views\Musics\Details.cshtml" />
     <Content Include="Views\Musics\Edit.cshtml" />
     <Content Include="Views\Musics\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

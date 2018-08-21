@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<h2>AdminIndex</h2>
+
+<h2>Music</h2>
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            <p>Description</p>
+        </th>
+        <th>
+            <p>Image</p>
+        </th>
+        <th>
+            <p>Price</p>
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.MusicView)
+    {
+        <tr>
+            <td>
+                <p>@item.Name</p>
+            </td>
+            <td>
+                <p>@item.Description</p>
+            </td>
+            <td>
+                <p>@item.Image</p>
+            </td>
+            <td>
+                <p>@item.Price</p>
+            </td>
+        </tr>
+    }
+</table>
+<p>To edit this go @Html.ActionLink("Music", "Index", "Musics")</p>
+
+<h2>Movies</h2>
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            <p>Description</p>
+        </th>
+        <th>
+            <p>Image</p>
+        </th>
+        <th>
+            <p>Price</p>
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.MovieView)
+    {
+        <tr>
+            <td>
+                <p>@item.Name</p>
+            </td>
+            <td>
+                <p>@item.Description</p>
+            </td>
+            <td>
+                <p>@item.Image</p>
+            </td>
+            <td>
+                <p>@item.Price</p>
+            </td>
+        </tr>
+    }
+</table>
+<p>To edit this go @Html.ActionLink("Movies", "Index", "Movies")</p>
+
+<h2>Books</h2>
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            <p>Description</p>
+        </th>
+        <th>
+            <p>Image</p>
+        </th>
+        <th>
+            <p>Price</p>
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.BookView)
+    {
+        <tr>
+            <td>
+                <p>@item.Name</p>
+            </td>
+            <td>
+                <p>@item.Description</p>
+            </td>
+            <td>
+                <p>@item.Image</p>
+            </td>
+            <td>
+                <p>@item.Price</p>
+            </td>
+        </tr>
+    }
+</table>
+<p>To edit this go @Html.ActionLink("Books", "Index", "Books")</p>
