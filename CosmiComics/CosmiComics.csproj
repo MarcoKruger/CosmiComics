@@ -158,15 +158,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\MusicsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdminLogin.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Music.cs" />
     <Compile Include="Models\ProductDBContext.cs" />
     <Compile Include="Models\ProductDBInitializer.cs" />
+    <Compile Include="Models\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +227,8 @@
     <Content Include="Views\Musics\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\OverView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

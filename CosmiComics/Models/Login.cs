@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CosmiComics.Models
 {
-    public class AdminLogin
+    public class Login
     {
         [Required(ErrorMessage = "No username given")]
         [Display(Name = "Admin Username")]

@@ -15,7 +15,7 @@ namespace CosmiComics.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login([Bind(Include = "Username,Password")]AdminLogin adminLogin)
+        public ActionResult Login([Bind(Include = "Username,Password")]Login adminLogin)
         {
             if (ModelState.IsValid)
             {
