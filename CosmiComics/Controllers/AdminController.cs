@@ -4,35 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CosmiComics.Controllers
 {
     public class AdminController : Controller
     {
         //ADmin login actions
-        public ActionResult Login()
+        public ActionResult AdminLogin()
         {
-            return View();
+            return PartialView();
         }
         [HttpPost]
-        public ActionResult Login([Bind(Include = "Username,Password")]Login adminLogin)
+        public ActionResult AdminLogin([Bind(Include = "Username,Password")]Login adminLogin)
         {
             if (ModelState.IsValid)
             {
-                if (adminLogin.Username == "Admin")
+                bool result = FormsAuthentication.Authenticate(adminLogin.Username, adminLogin.Password);
+
+                if (result)
                 {
-                    if (adminLogin.Password == "Admin")
-                    {
-                        return RedirectToAction("AdminIndex", "Admin");
-                    }
+                    FormsAuthentication.SetAuthCookie(adminLogin.Username, false);
+                    return RedirectToAction(Url.Action("AdminIndex", "Admin"));
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Incorrect username or password");
                     return View();
                 }
-                return View();
             }
             return View();
         }
         // Admin page afer he logs in
         private ProductDBContext db = new ProductDBContext();
+
         public ActionResult AdminIndex()
         {
             ViewBag.MusicView = db.Music.ToList();

@@ -9,11 +9,11 @@ namespace CosmiComics.Models
     public class Login
     {
         [Required(ErrorMessage = "No username given")]
-        [Display(Name = "Admin Username")]
+        [Display(Name = "Username")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "No password given")]
-        [Display(Name = "Admin Password")]
+        [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

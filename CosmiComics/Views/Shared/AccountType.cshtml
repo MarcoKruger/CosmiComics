@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2 class="text-center">Account type</h2>
+    <div class="col-md-6">
+        <h3>Admin Account</h3>
+        @{Html.RenderPartial("_AdminLogin");}
+    </div>
+    <div class="col-md-6">
+        <h3>Users Account</h3>
+        @Html.Partial("_AdminLogin")
+    </div>
+</div>
+
+

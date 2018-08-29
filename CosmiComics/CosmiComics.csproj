@@ -156,6 +156,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\MusicsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -225,13 +226,15 @@
     <Content Include="Views\Musics\Details.cshtml" />
     <Content Include="Views\Musics\Edit.cshtml" />
     <Content Include="Views\Musics\Index.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\AdminIndex.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\OverView.cshtml" />
+    <Content Include="Views\User\UserLogin.cshtml" />
+    <Content Include="Views\Home\OverView.cshtml" />
+    <Content Include="Views\Shared\AccountType.cshtml" />
+    <Content Include="Views\Shared\_AdminLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

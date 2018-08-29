@@ -4,53 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CosmiComics.Controllers
 {
+    
     public class UserController : Controller
     {
         private ProductDBContext db = new ProductDBContext();
         // GET: User
-        public ActionResult Index()
+        public ActionResult UserLogin()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Index([Bind(Include = "Username,Password")]Login userLogin)
+        public ActionResult UserLogin([Bind(Include = "Username,Password")]Login userLogin)
         {
             if (ModelState.IsValid)
             {
-                if (userLogin.Username == "User")
+                bool result = FormsAuthentication.Authenticate(userLogin.Username, userLogin.Password);
+
+                if (result)
                 {
-                    if (userLogin.Password == "User")
-                    {
-                        return RedirectToAction("AdminIndex", "Admin");
-                    }
+                    FormsAuthentication.SetAuthCookie(userLogin.Username, false);
+                    return Redirect(Url.Action("", ""));
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Incorrect username or password");
                     return View();
                 }
-                return View();
             }
             return View();
         }
 
-        public ActionResult OverView()
-        {
-            List<Products> productList = new List<Products>();
-
-            foreach (var item in db.Books)
-            {
-                productList.Add(new Products() { Name = item.Name, Image = item.Image, Price = item.Price });
-            }
-            foreach (var item in db.Music)
-            {
-                productList.Add(new Products() { Name = item.Name, Image = item.Image, Price = item.Price });
-            }
-            foreach (var item in db.Movies)
-            {
-                productList.Add(new Products() { Name = item.Name, Image = item.Image, Price = item.Price });
-            }
-            ViewBag.Products = productList;
-            return View();
-        }
+        
     }
 }
